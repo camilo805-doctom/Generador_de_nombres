@@ -1,0 +1,63 @@
+import random
+
+# Listas de nombres y apellidos
+
+nombres_masculinos = ["Juan", "Carlos", "Pedro", "Diego", "Luis"]
+
+nombres_femeninos = ["María", "Laura", "Ana", "Sofía", "Elena"]
+
+apellidos = ["Gómez", "Fernández", "Martínez", "Rodríguez", "López", "Pérez", "García", "Sánchez", "Ramírez", "Díaz"]
+
+# Solicitar al usuario que indique el género del nombre
+
+user=str(input("indique genero del nombre (masculino/femenino): "))
+
+while True:
+
+    # Convertir la entrada del usuario a minúsculas para hacerla insensible a mayúsculas y minúsculas
+
+    if user.lower()=="masculino":
+
+        nombre= random.choice(nombres_masculinos)
+
+    elif user.lower()=="femenino":
+
+        nombre=random.choice(nombres_femeninos)
+    
+    else:
+
+        print("no es una entrada valida")
+
+        break
+
+    # Generar un apellido aleatorio
+
+    apellido=random.choice(apellidos)
+
+    # Combinar nombre y apellido para formar el nombre completo
+
+    nombre_completo=f"{nombre} {apellido}"
+
+    # Mostrar el nombre generado
+
+    print(f"nombre generado: {nombre_completo}")
+
+    # Preguntar al usuario si desea seguir generando nombres
+
+    nueva_entrada=str(input("¿Desea seguir generando nombres?: "))
+
+    # Salir del bucle si la respuesta es "No"
+
+    if nueva_entrada.lower()=="No":
+
+        print("Nos vemos despues")
+
+        break
+
+    else:
+
+        print("seguimos generando nombres")
+
+        # Solicitar al usuario que indique el género del nombre para la siguiente iteración
+
+        user=str(input("indique genero del nombre (masculino/femenino): "))
